@@ -1,0 +1,18 @@
+<header class=" bg-dark">
+  <div class="container navbar">
+        <div>
+          <%= link_to root_path, class: "navbar-brand" do%>
+            <%= image_tag("Logo.jpeg", class: "logo") %>
+          <%end%>
+        </div>
+        <div>
+          <% if current_user%>
+            <%=link_to "Activities",  new_user_activity_path(current_user), class:"text-white mr-3" %>
+            <%=  link_to "LogOut", destroy_user_session_path, class: "btn btn-outline-light", method: :delete%>
+          <%else%>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light"%>
+            <%= link_to "SignUp",new_user_registration_path, class: "btn btn-outline-light"%>
+          <%end%>
+        </div>
+  </div>
+</header>

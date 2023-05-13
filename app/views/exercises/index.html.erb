@@ -1,0 +1,89 @@
+<header class=" py-5">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center justify-content-center">
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <div class="my-5 text-center text-xl-start">
+          <h1 class="display-5 fw-bolder text-danger mb-2">Gorilla Fitness Exercise</h1>
+          <p class="lead fw-normal text-danger-50 mb-4">Sweat, Smile And Repeat</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+            <p class="text-danger"> check out the most effective exercises personalized to you and login or signup to kee track of your exercise activities</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+        <%= image_tag("HeroBanner1.jpg", class:"img-fluid rounded-3 my-5" ) %>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="py-5 text-center container mb-3">
+  <div id="exercise-form">
+    <%= form_tag(exercises_path, method: :get) do %>
+      <%= select_tag(:bodyPart, options_for_select(@body_part_list.each { |bp| [bp['name'], bp['id']] }), prompt: 'All', class: "form-select") %>
+      <%= submit_tag('Filter By BodyPart', class:"btn btn-outline-danger mt-3") %>
+    <% end %>
+    </div>
+    <h2 id="timer-display" class="text-danger mt-3"> 00:00</h2>
+    <button id="start-button" class="btn btn-outline-success">Start</button>
+    <button id="stop-button" class="btn btn-outline-info">Pause</button>
+    <button id="reset-button" class="btn btn-outline-danger">Reset</button>
+  </section>
+
+  <section class="py-5 container mb-3">
+    <div class="row">
+      <div class="col">
+        <input type="number" id ="weight-val" class="form-control" placeholder="Weight(kg)" required >
+      </div>
+      <div class="col">
+        <input type="number" id ="time-val" class="form-control" placeholder="Time(mins)" required>
+      </div>
+      <div class="col">
+        <input type="number" id ="met-val" class="form-control" placeholder="MET" required>
+      </div>
+      <div class="col">
+        <button id="calculate-btn" class="btn btn-outline-warning">Calculate</button>
+      </div>
+   
+    </div>
+    <div class="mt-2">
+      <a target="_blank" href="https://www.omicsonline.org/articles-images/2157-7595-6-220-t003.html">
+        KNOW YOUR MET VALUE
+      </a>
+      <p>  Calories burnt: <span id="calories-burnt-res"></span></p>
+    </div>
+  </section>
+  
+  <section class="album py-5 bg-lightred">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @items.each do |exercise| %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <%= image_tag(exercise['gifUrl'], class:"bd-placeholder-img card-img-top") %>
+            <div class="card-body">
+              <p class="card-text text-danger"><%=exercise['name']%></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to "view", exercise_path(exercise['id']), class:"btn btn-outline-danger" %>
+                </div>
+                <small class="text-muted"><%=exercise['bodyPart']%></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div> 
+    </div>
+  </section>
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1"><%= render 'shared/pagination', items: @items %></p>
+  </div>
+</footer>

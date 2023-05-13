@@ -8,8 +8,8 @@ class ExercisesController < ApplicationController
       @items = Kaminari.paginate_array(@exercises).page(params[:page]).per(12)
 
     else
-      @exercises = Exercise.get_exercises
-      @items = Kaminari.paginate_array(@exercises).page(params[:page]).per(10)
+      @exercises =  ExerciseApiService.get_exercises
+      @items = Kaminari.paginate_array(@exercises).page(params[:page]).per(12)
 
     end
 
@@ -20,7 +20,7 @@ class ExercisesController < ApplicationController
   end
 
   def show
-    @exercise = Exercise.get_exercise(params[:id])
+    @exercise =  ExerciseApiService.get_exercise(params[:id])
 
     respond_to do |format|
       format.html

@@ -32,7 +32,8 @@ gem 'httparty'
 gem 'devise'
 gem 'fuzzy_match'
 gem 'kaminari'
-
+gem 'bootstrap', '~> 5.0'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

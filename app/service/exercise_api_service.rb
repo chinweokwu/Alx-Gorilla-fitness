@@ -3,6 +3,7 @@ require 'uri'
 require'erb'
 
 class ExerciseApiService
+  include HTTParty
   base_uri  'https://exercisedb.p.rapidapi.com/exercises'
 
   def self.get_exercises
