@@ -1,0 +1,17 @@
+<% @items.each do |exercise| %>
+  <div class="col">
+    <div class="card shadow-sm">
+      <%= image_tag(exercise['gifUrl'], class:"bd-placeholder-img card-img-top") %>
+      <div class="card-body">
+        <p class="card-text text-danger"><%=exercise['name']%></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <%= link_to "view", exercise_path(exercise['id']), class:"btn btn-outline-danger" %>
+          </div>
+          <small class="text-muted"><%=exercise['bodyPart']%></small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

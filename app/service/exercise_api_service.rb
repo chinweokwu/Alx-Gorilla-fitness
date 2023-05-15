@@ -33,7 +33,7 @@ class ExerciseApiService
   end
 
   def self.fuzzy_match_body_part(body_part_name)
-    body_parts = Exercise.get_bodyparts.map { |bp| bp }
+    body_parts = ExerciseApiService.get_bodyparts.map { |bp| bp }
     FuzzyMatch.new(body_parts).find(body_part_name)
   end
 end
@@ -43,7 +43,7 @@ private
 def rapidapi_key
   {
     "Content-Type" => "application/json",
-    'X-RapidAPI-Key': '4ef2fac8f4mshb4efce3ed032815p1e5c45jsnfc08996f4680',
+    'X-RapidAPI-Key': '7f00426e9dmsha9b1b9d527166a8p1f4de5jsn0c12218b8b05',
     "x-rapidapi-host" => "exercisedb.p.rapidapi.com"
   }
 end

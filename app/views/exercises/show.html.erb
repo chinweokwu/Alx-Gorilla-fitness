@@ -1,0 +1,24 @@
+<section class="py-5">
+  <div class="container px-4 px-lg-5 my-5">
+  <%= link_to "Back to Exercises", exercises_path, class:"btn btn-outline-danger" %>
+
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <%= image_tag(@exercise['gifUrl'], class: "card-img-top mb-5 mb-md-0") %>
+      </div>
+      <div class="col-md-6"> 
+        <h2 class="display-5 fw-bolder text-danger"><%= @exercise['name'] %></h2>
+
+        <p class="lead">Exercise keep you strong. <%= @exercise['equipment'] %> bup is one
+         of the best <br /> exercises to target your <%= @exercise['target'] %>. It will help you improve your
+          <br /> mood and gain energy.
+        </p>
+        <div class="">
+          <p class=""> <%= image_tag("body-part.png", class: "logo") %> : <%= @exercise['bodyPart'] %> </p>
+          <p class=""> <%= image_tag("equipment.png", class: "logo") %> : <%= @exercise['equipment'] %> </p>
+          <p class=""> <%= image_tag("target.png", class: "logo") %> : <%= @exercise['target'] %> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+<%= form_tag(exercises_path, method: :get, id: 'filter-form') do %>
+  <%= select_tag(:bodyPart, options_for_select(@body_part_list.each { |bp| [bp['name'], bp['id']] }, params[:bodyPart]), prompt: 'All', class: "form-select") %>
+  <%= submit_tag('Filter By BodyPart', class:"btn btn-outline-danger mt-3", id: "filter-button") %>
+<% end %>
