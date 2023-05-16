@@ -1,0 +1,38 @@
+<div class="w-50">
+  <div class="container">
+    <%= form_with(model: @activity, url: user_activities_path(current_user)) do |form| %>
+      <% if @activity.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+            <ul>
+              <% @activity.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+        </div>  
+      <% end %>
+      <div class="mb-3">
+        <%= form.label :bodypart, class:"form-label", for:"exampleInputBodyPart" %>
+        <%= form.text_field :bodypart, :class => "form-control", :id => "exampleInputBodyPart", "aria-describedby" => "bodypartHelp" %>
+        <div id:"bodypartHelp" class="form-text">keep track of tthe part of the body you worked</div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :date, class:"form-label", for:"exampleInputDuration" %>
+        <%= form.date_field :date, :class => "form-control", :id => "exampleInputDuration", "aria-describedby" => "durationHelp" %>
+        <div id:"durationHelp" class="form-text">keep track of tthe part of the body you worked</div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :caloriesburnt, class:"form-label", for:"exampleInputCalories" %>
+        <%= form.text_field :caloriesburnt, :class => "form-control", :id => "exampleInputCalories", "aria-describedby" => "caloriesHelp" %>
+        <div id:"caloriesHelp" class="form-text">keep track of tthe part of the body you worked</div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

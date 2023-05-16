@@ -16,3 +16,23 @@
 
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Poppins');
+ 
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.header-text {
+  margin-top: 120px;
+  margin-left: 40px;
+  @media (max-width: 968px) {
+    margin-top: 45px;
+  }
+}

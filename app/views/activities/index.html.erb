@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>Activities</h1>
+
+<table class="table">
+  <thead class="thread-dark">
+    <tr>
+      <th scope="col">Bodypart</th>
+      <th scope="col">Date</th>
+      <th scope="col">Calories</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.bodypart %></td>
+        <td><%= activity.date %></td>
+        <td><%= activity.caloriesburnt %></td>
+        <td><%= link_to 'Edit', edit_user_activity_path(current_user, activity) %></td>
+        <td><%= link_to 'Destroy', user_activity_path(current_user, activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_user_activity_path %>
+
+</div>
