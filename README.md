@@ -22,7 +22,7 @@
 This project uses the [exercisedb](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb) API key with 400 / month Hard Limit. you can use any of these api key to access the exercise database in service file.
 
 - 3b1480da5emsh8d113d3518046eap1b0668jsn888c8d1d440e
-- 
+- d7a28d2cb1mshe9634bc0eec3f1cp1d12dajsn8b713b467fb5
 
 ## How to Install
 
@@ -54,7 +54,7 @@ To set up this project locally we will need:
 
 -  Run the following command to   build and start the Docker containers defined in the docker-compose.yml file:
     ``` 
-   docker-compose up --build
+   sudo docker-compose up --build
     ```
     This command will download the required Docker images, build the Rails application container, and start the services.
 

@@ -43,7 +43,7 @@ private
 def rapidapi_key
   {
     "Content-Type" => "application/json",
-    'X-RapidAPI-Key': '7f00426e9dmsha9b1b9d527166a8p1f4de5jsn0c12218b8b05',
+    'X-RapidAPI-Key': '3b1480da5emsh8d113d3518046eap1b0668jsn888c8d1d440e',
     "x-rapidapi-host" => "exercisedb.p.rapidapi.com"
   }
 end
