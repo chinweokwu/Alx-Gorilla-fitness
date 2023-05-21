@@ -1,7 +1,7 @@
 # Gorilla-fitness-App
 > This is a exercise fitness app that targets on specfic body parts and work on your muscles group
 > It contains gif images that show how each work out is done properly and very effieciently.
-> It also have a carloires calculator and a timer to keep track of the time spent on workout.
+> It also have a calories calculator and a timer to keep track of the time spent on workout.
 > it has a login system and a user registration system to be used to keep track of activites of the current user.
 
 ## Built With
